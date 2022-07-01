@@ -1,0 +1,10 @@
+---
+- hosts: web
+  tasks:
+    - name: Template a file to /etc/file.conf
+      ansible.builtin.template:
+        src: /var/ans/
+        dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: '0644'
