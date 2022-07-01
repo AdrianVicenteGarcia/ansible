@@ -13,6 +13,6 @@
     - name: change ports
       lineinfile:
         path: /etc/apache2/sites-available/000-default.conf
-        regexp: '^<VirtualHost>'
-        insertafter: '^#<VirtualHost>'
+        regexp: '^<VirtualHost'
+        insertafter: '^#<VirtualHost '
         line: <VirtualHost *:8080>
