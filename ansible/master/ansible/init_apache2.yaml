@@ -4,4 +4,4 @@
   - name: Start service apache2, if not started
     service:
       name: apache2
-      state: restarted
+      state: started

@@ -1,7 +1,14 @@
 ---
 - hosts: web
   tasks:
-    - name: Start service apache2, if not started
-      service:
-        name: apache2
-        state: started
+    - name: Create user
+      user:
+        name: app
+        generate_ssh_key: True
+        state: present
+    - name: Set authorized key taken from file
+      authorized_key:
+        user: app
+        state: present
+        key: "{{ lookup('file', 'app.pub') }}"
+        manage_dir : False
