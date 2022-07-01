@@ -1,9 +1,9 @@
 ---
 - hosts: web
   tasks:
-    - name: Template a file to /etc/file.conf
-      ansible.builtin.template:
-        src: /var/ans/
+    - name: Template a file to /var/www/html/index.html
+      template:
+        src: index.j2
         dest: /var/www/html/index.html
         owner: www-data
         group: www-data
